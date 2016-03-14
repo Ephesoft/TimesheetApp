@@ -8,5 +8,5 @@ public interface UserService {
 	public User getUserById(long id);
 	
 	public User validateUser(String username, String password) throws ApplicationException;
-
+	
 }

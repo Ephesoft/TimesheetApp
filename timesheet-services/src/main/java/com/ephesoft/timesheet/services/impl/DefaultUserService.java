@@ -18,10 +18,10 @@ public class DefaultUserService implements UserService {
 	public User getUserById(long id) {
 		return userDao.findOne(User.class, id);
 	}
-
+	
 	@Override
-	public User validateUser(String username, String password) throws ApplicationException {
-		User user = userDao.validateUser(username, password);
+	public User validateUser(String userName, String password) throws ApplicationException {
+		User user = userDao.validateUser(userName, password);
 		if (user == null) {
 			throw new ApplicationException(ResponseCode.UNAUTHORISED);
 		}

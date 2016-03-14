@@ -9,7 +9,7 @@
 	</context-param>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:META-INF/spring/speedy-ui.xml</param-value>
+		<param-value>classpath:META-INF/spring/timesheet-ui.xml</param-value>
 	</context-param>
 	<context-param>
 		<param-name>log4jConfigLocation</param-name>
