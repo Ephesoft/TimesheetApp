@@ -9,6 +9,8 @@ public class UserDao extends AbstractJpaDao {
 	
 	public User validateUser(String username, String password) {
 		return null;
+		
+		
 	}
 
 }
