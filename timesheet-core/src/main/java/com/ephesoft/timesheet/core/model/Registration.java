@@ -1,18 +1,38 @@
-package com.ephesoft.timesheet.core.model;
+/*package com.ephesoft.timesheet.core.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="registration")
+@Table(name = "registration")
 public class Registration {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	@Column(name = "firstname")
 	private String firstName;
+	@Column(name = "lastname")
 	private String lastName;
+	@Column(name = "email")
 	private String email;
+	@Column(name = "password")
 	private String password;
-	private String dob;
-	private String contactNo;
+	@Column(name = "contact")
+	private String contact;
 
 	public String getPassword() {
 		return password;
@@ -46,20 +66,18 @@ public class Registration {
 		this.email = email;
 	}
 
-	public String getDob() {
-		return dob;
-	}
-
-	public void setDob(String dob) {
-		this.dob = dob;
-	}
-
 	public String getContactNo() {
-		return contactNo;
+		return contact;
 	}
 
 	public void setContactNo(String contactNo) {
-		this.contactNo = contactNo;
+		this.contact = contactNo;
+	}
+
+	public static Registration findOne(Class<Registration> class1, long id2) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
+*/

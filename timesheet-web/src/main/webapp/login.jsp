@@ -20,8 +20,9 @@
 				<td><input type="password" name="password" /></td>
 			<tr>
 				<td><input type="submit" value="login" /></td>
-				
-					<td><input type="button" value="create new user" onclick="location.href='register.jsp';"/></td>
+
+				<td><input type="button" value="create new user"
+					onclick="location.href='register.jsp';" /></td>
 			</tr>
 
 

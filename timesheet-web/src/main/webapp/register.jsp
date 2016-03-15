@@ -14,6 +14,10 @@
 				<td><input type="text" name="firstname" /></td>
 			</tr>
 			<tr>
+				<td>User Name:</td>
+				<td><input type="text" name="username" /></td>
+			</tr>
+			<tr>
 				<td>Last Name:</td>
 				<td><input type=text name="lastname" /></td>
 			</tr>
@@ -25,14 +29,7 @@
 				<td>Password:</td>
 				<td><input type="password" name="password" /></td>
 			</tr>
-			<tr>
-				<td>D.O.B.:</td>
-				<td><input type="text" name="dob" /></td>
-			</tr>
-			<tr>
-				<td>Contact:</td>
-				<td><input type="text" name="contact"></td>
-			</tr>
+			
 			<tr>
 				<td><input type="submit" value="submit" /></td>
 			</tr>

@@ -5,13 +5,14 @@ import javax.persistence.NamedQuery;
 import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ephesoft.timesheet.core.model.User;
 
 @Repository
 
 @NamedQueries({ @NamedQuery(name = "userData", query = "from user  where userName='?' ,password='?' ") })
-
+@Transactional
 public class UserDao extends AbstractJpaDao {
 
 	public User validateUser(String username, String password) {
@@ -23,4 +24,17 @@ public class UserDao extends AbstractJpaDao {
 		return user;
 	}
 
+	/*public User saveData(String firstName, String lastName,String password1, String email,String UserName) {
+		User user = new User();
+		user.setLastName(lastName);
+		user.setPassword(password1);
+		user.setEmail(email);
+		user.setUserName(UserName);
+		
+}*/
+
+	public User saveData(User user1) {
+		em.persist(user1);
+		return user1;
+	}
 }

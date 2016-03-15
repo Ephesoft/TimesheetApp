@@ -16,26 +16,29 @@ import com.ephesoft.timesheet.services.UserService;
 
 @Controller
 public class LoginController {
-	
-	protected static final Logger logger = Logger.getLogger(LoginController.class);
-	
-	@Autowired UserService userService;
 
-    @RequestMapping(value = "/login", method = {RequestMethod.POST})
-    public String getDeals( HttpServletRequest request, Model model) throws ApplicationException {
-    	
-    	String userName = request.getParameter("usename");
-    	String password = request.getParameter("password");
-    	User user = null;
+	protected static final Logger logger = Logger
+			.getLogger(LoginController.class);
+
+	@Autowired
+	UserService userService;
+
+	@RequestMapping(value = "/login", method = { RequestMethod.POST })
+	public String getDeals(HttpServletRequest request, Model model)
+			throws ApplicationException {
+
+		String userName = request.getParameter("usename");
+		String password = request.getParameter("password");
+		User user = null;
 		try {
 			user = userService.validateUser(userName, password);
 		} catch (ApplicationException e) {
 			logger.error(e.getMessage(), e);
 			throw new ApplicationException(ResponseCode.UNAUTHORISED);
 		}
-        model.addAttribute("user", user);
-        return "/index.jsp";
+		model.addAttribute("user", user);
+		return "/buttons.jsp";
 
-    }
+	}
 
 }
