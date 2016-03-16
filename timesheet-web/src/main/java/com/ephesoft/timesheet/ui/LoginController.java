@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ephesoft.timesheet.core.ApplicationException;
 import com.ephesoft.timesheet.core.model.User;
@@ -33,7 +34,23 @@ public class LoginController {
     	user = new User();
     	user.setId(userId);
         model.addAttribute("user", user);
-        return "/index.jsp";
+        return "index";
+
+    }
+    
+    @ResponseBody
+    @RequestMapping(value = "/u/ajax/{userId}", method = { RequestMethod.POST })
+    public User getDealsAjax(@PathVariable("userId") long userId, HttpServletRequest request, Model model) {
+    	User user = null;
+		try {
+			user = userService.validateUser("", "");
+		} catch (ApplicationException e) {
+			logger.error(e.getMessage(), e);
+			//TODO: Throw Exception.
+		}
+    	user = new User();
+    	user.setId(userId);
+        return user;
 
     }
 

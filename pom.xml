@@ -20,6 +20,8 @@
 		<servlet.version>3.1.0</servlet.version>
 		<hikari.version>2.3.8</hikari.version>
         <hibernate.version>4.3.10.Final</hibernate.version>
+        <jackson.version>2.5.3</jackson.version>
+        <cxf.version>3.1.1</cxf.version>
 	</properties>
 
 	<dependencyManagement>
@@ -31,6 +33,30 @@
 			</dependency>
 
             <!-- Third party dependencies-->
+            
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+                <version>${cxf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-rs-extension-providers</artifactId>
+                <version>${cxf.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-rs-client</artifactId>
+                <version>${cxf.version}</version>
+            </dependency>
+            
+            
+            <dependency>
+                <groupId>com.fasterxml.jackson.jaxrs</groupId>
+                <artifactId>jackson-jaxrs-json-provider</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>javax.servlet</groupId>
